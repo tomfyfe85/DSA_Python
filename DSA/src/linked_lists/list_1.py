@@ -1,6 +1,6 @@
 class New_Node:
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, value):
+        self.value = value
         self.next = None
 
 class Linked_List:
@@ -23,37 +23,40 @@ class Linked_List:
         return True
 
     def pop(self):
-        current_node = self.head.next
-        next_node = current_node.next
-        if current_node is None:
+        current_node = self.head
+        previous_node = self.head
+
+        if self.length == 0:
             return None
 
-        while current_node:
-            print("current", current_node.data)
-            print("next", next_node)
-            if next_node.next is None:
-                print("loop")
-                current_node.next = None
-                self.tail = current_node
-                break
-            current_node = next_node
-            next_node = current_node.next
-            print("end")
+        while current_node.next:
+            previous_node = current_node
+            current_node = current_node.next
 
-        return None
+        self.tail = previous_node
+        self.tail.next = None
+        self.length -=1
+
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+
+        return current_node
+
+
+
+
 
     def print_list(self):
         temp = self.head
         while temp is not None:
-            print(temp.data)
+            print(temp.value)
             temp = temp.next
 
 
-myList = Linked_List(0)
-myList.append(1)
+myList = Linked_List(1)
 myList.append(2)
-myList.append(3)
-myList.append(4)
-myList.pop()
 
-myList.print_list()
+print(myList.pop())
+print(myList.pop())
+print(myList.pop())
