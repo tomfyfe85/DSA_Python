@@ -1,4 +1,23 @@
 
+"""    
+    This module implements a singly linked list data structure with basic operations.
+
+    Classes:
+        NewNode:
+            Represents a node in a singly linked list, storing a value and a reference
+            to the next node.
+
+        LinkedList:
+            Implements a singly linked list supporting the following operations:
+                - append(value): Add a node with the given value to the end of the list.
+                - pop(): Remove and return the last node from the list.
+                - prepend(value): Add a node with the given value to the beginning of the list.
+                - pop_first(): Remove and return the first node from the list.
+                - get(index): Retrieve the node at the specified index.
+                - set(index, value): Update the value of the node at the specified index.
+                - print_list(): Print all values in the list.
+"""
+
 class NewNode:
 
     def __init__(self, value):
