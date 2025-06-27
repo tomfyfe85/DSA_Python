@@ -1,9 +1,12 @@
+
 class NewNode:
+
     def __init__(self, value):
         self.value = value
         self.next = None
 
 class LinkedList:
+
     def __init__(self, value):
         new_node = NewNode(value)
         self.head = new_node
@@ -11,6 +14,15 @@ class LinkedList:
         self.length = 1
 
     def append(self, value):
+        """
+        Appends a new node with the given value to the end of the linked list.
+
+        Args:
+            value: The value to be stored in the new node.
+
+        Returns:
+            bool: True if the node was successfully appended.
+        """
         new_node = NewNode(value)
         if self.head is None:
             self.head = new_node
@@ -21,6 +33,7 @@ class LinkedList:
         self.length +=1
 
         return True
+
 
     def pop(self):
         current_node = self.head
@@ -71,6 +84,15 @@ class LinkedList:
 
 
     def get(self, index):
+        """
+        Returns the node at the specified index in the linked list.
+
+        Parameters:
+            index (int): The position of the node to retrieve (0-based).
+
+        Returns:
+            NewNode: The node at the given index, or None if index is out of bounds.
+        """
         if index < 0 or index >= self.length:
             return None
         temp = self.head
@@ -80,6 +102,17 @@ class LinkedList:
 
 
     def set(self, index, value):
+        """
+        Sets the value of the node at the specified index in the linked list.
+
+        Args:
+            index (int): The position of the node whose value is to be updated.
+            value (Any): The new value to assign to the node.
+
+        Returns:
+            bool: True if the node at the specified index exists and its value was updated; 
+            False otherwise.
+        """
         temp = self.get(index)
         if temp:
             temp.value = value
