@@ -69,6 +69,7 @@ class LinkedList:
 
         return temp
 
+
     def get(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -78,6 +79,14 @@ class LinkedList:
         return temp
 
 
+    def set(self, index, value):
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        for _ in range (index):
+            temp = temp.next
+        temp.value = value
+        return temp.value
 
     def print_list(self):
         temp = self.head
@@ -90,7 +99,6 @@ myList = LinkedList(0)
 myList.append(1)
 myList.append(2)
 myList.append(3)
+myList.set(2, 60)
 
-print(myList.get(2))
-
-# myList.print_list()
+myList.print_list()
