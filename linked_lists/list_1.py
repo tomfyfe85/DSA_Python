@@ -19,18 +19,22 @@
 """
 
 class NewNode:
-
     def __init__(self, value):
         self.value = value
         self.next = None
 
-class LinkedList:
 
-    def __init__(self, value):
-        new_node = NewNode(value)
-        self.head = new_node
-        self.tail = new_node
-        self.length = 1
+class LinkedList:
+    def __init__(self, value=None):
+        self.head = None
+        self.tail = None
+        self.length = 0
+        if value is not None:
+            new_node = NewNode(value)
+            self.head = new_node
+            self.tail = new_node
+            self.length = 1
+
 
     def append(self, value):
         """
@@ -145,10 +149,9 @@ class LinkedList:
             temp = temp.next
 
 
-myList = LinkedList(0)
+myList = LinkedList()
 myList.append(1)
 myList.append(2)
 myList.append(3)
-myList.set(2, 60)
 
 myList.print_list()
