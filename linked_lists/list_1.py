@@ -80,13 +80,11 @@ class LinkedList:
 
 
     def set(self, index, value):
-        if index < 0 or index >= self.length:
-            return None
-        temp = self.head
-        for _ in range (index):
-            temp = temp.next
-        temp.value = value
-        return temp.value
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
 
     def print_list(self):
         temp = self.head
