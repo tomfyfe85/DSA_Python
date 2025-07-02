@@ -76,9 +76,10 @@ class LinkedList:
         if self.length == 0:
             self.head = new_node
             self.tail = new_node
-
-        new_node.next = self.head
-        self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+  
         self.length += 1
         return True
 
@@ -147,8 +148,24 @@ class LinkedList:
         temp.next = None
         self.length -= 1
 
-        return temp
+        return temp.value
 
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        before = None
+        after = temp.next
+  
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
+      
+        return True
+          
+          
 
 
     def print_list(self):
@@ -163,6 +180,5 @@ myList.append(1)
 myList.append(2)
 myList.append(3)
 
-myList.remove(3)
-
+myList.reverse()
 myList.print_list()
