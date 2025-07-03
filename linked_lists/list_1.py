@@ -113,7 +113,7 @@ class LinkedList:
             temp.value = value
             return True
         return False
-  
+
     def insert(self, index, value):
         if index < 0 or index > self.length:
             return False
@@ -148,7 +148,7 @@ class LinkedList:
         temp.next = None
         self.length -= 1
 
-        return temp.value
+        return temp
 
     def reverse(self):
         temp = self.head
@@ -156,16 +156,14 @@ class LinkedList:
         self.tail = temp
         before = None
         after = temp.next
-  
+
         for _ in range(self.length):
             after = temp.next
             temp.next = before
             before = temp
             temp = after
-      
+
         return True
-          
-          
 
 
     def print_list(self):
