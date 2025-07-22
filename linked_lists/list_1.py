@@ -82,7 +82,6 @@ class LinkedList:
         self.length += 1
         return True
 
-
     def pop_first(self):
         if self.length == 0:
             return None
@@ -96,8 +95,6 @@ class LinkedList:
             self.tail = None
         return temp
 
-
-
     def get(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -106,14 +103,13 @@ class LinkedList:
             temp = temp.next
         return temp
 
-
     def set(self, index, value):
         temp = self.get(index)
         if temp:
             temp.value = value
             return True
         return False
-
+    
     def insert(self, index, value):
         if index < 0 or index > self.length:
             return False
@@ -192,7 +188,23 @@ class LinkedList:
             if slow == fast:
                 return True
         return False
-
+    
+    def remove_duplicates(self):
+        if self.head is None:
+            return None
+        
+        temp = self.head
+        prev = None
+        seen = set()
+      
+        while temp:
+            if temp.value in seen:
+                prev.next = temp.next
+                self.length -= 1
+            else:
+                seen.add(temp.value)
+                prev = temp
+            temp = temp.next
 
     def print_list(self):
         temp = self.head
@@ -200,11 +212,21 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
-
 myList = LinkedList(0)
 myList.append(1)
 myList.append(2)
 myList.append(3)
+myList.append(3)
+myList.append(3)
+myList.append(2)
 
-# myList.reverse()
+myList.remove_duplicates()
+
 myList.print_list()
+
+
+
+
+
+
+
