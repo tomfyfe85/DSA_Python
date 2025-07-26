@@ -207,28 +207,18 @@ class LinkedList:
             temp = temp.next
             
     def binary_to_decimal(self):
-        # create a variable to hod current value 
-        # if next node is a 1 double the current and add one
-        # if next is 0 add 0 to current value and double the 
-        current_value = 0
-        
+
         current_node = self.head
-        
+        current_value = 0
+
         while current_node:
-            if current_value == 0 and current_node.value == 1:
-                current_value += 1
-                # print("first",current_value)
-            if current_value >= 1 and current_node.value == 1:
-                current_value = (current_value * 2) + 1
-                print(current_value)
-            if current_value >= 1 and current_node.value == 0:
-                current_value = current_value * 2
             
+            current_value = (current_value * 2) + current_node.value
             current_node = current_node.next
-        
+          
         return current_value
-                
-        
+              
+
     def print_list(self):
         temp = self.head
         while temp is not None:
@@ -236,10 +226,10 @@ class LinkedList:
             temp = temp.next
 
 myList = LinkedList(1)
-# myList.append(0)
-# myList.append(1)
-# myList.append(1)
-# myList.append(0)
+myList.append(0)
+myList.append(1)
+myList.append(1)
+myList.append(0)
 
 print(myList.binary_to_decimal())
 
