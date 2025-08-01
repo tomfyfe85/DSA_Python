@@ -205,19 +205,46 @@ class LinkedList:
                 seen.add(temp.value)
                 prev = temp
             temp = temp.next
-            
+
     def binary_to_decimal(self):
 
         current_node = self.head
         current_value = 0
 
         while current_node:
-            
             current_value = (current_value * 2) + current_node.value
             current_node = current_node.next
-          
+
         return current_value
-              
+
+    def partition_list(self, x):
+        d1 = NewNode(0)
+        d2 = NewNode(0)
+
+        prev1 = d1
+        prev2 = d2
+
+        if self.head is None:
+            return None
+
+        current = self.head
+
+        for _ in range(self.length):
+            if current.value < x:
+                prev1.next = current
+                prev1 = prev1.next
+
+            if current.value >= x:
+                prev2.next = current
+                prev2 = prev2.next
+            current = current.next
+        
+        prev2.next = None
+        prev1.next = d2.next
+        self.head = d1.next
+        
+        return True
+
 
     def print_list(self):
         temp = self.head
@@ -225,15 +252,16 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
-myList = LinkedList(1)
-myList.append(0)
+myList = LinkedList(3)
+myList.append(8)
+myList.append(5)
+myList.append(10)
+myList.append(2)
 myList.append(1)
-myList.append(1)
-myList.append(0)
 
-print(myList.binary_to_decimal())
 
-# myList.print_list()
+myList.partition_list(5)
+myList.print_list()
 
 
 
