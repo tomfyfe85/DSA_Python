@@ -261,23 +261,35 @@ class LinkedList:
         # -1012  - target
         # print(self.length)
 
-
+        dummy = NewNode(0)
+        d1 = dummy
         index = self.length - 1
         target = 0
-        current = self.head
-        p1 = self.head
+        current = self.head.next
+        
+        loop_no = 0
+        p1 = current
+        p2 = current
 
         target_index_1 = start_index -1
-
+        target_index_2 = end_index -1
+        
         for i in range(1, index):
+            print(current.value)
+            print(i)
+            
             if target_index_1 == i - 1:
                 p1 = current
-                
+                d1.next = current.next
+                d1 = d1.next
 
 
+            if i >= start_index and i <= end_index:
+                print("index", i)
+                print("current val", current.value)
 
             current = current.next
-
+ 
     def print_list(self):
         temp = self.head
         while temp is not None:
@@ -292,7 +304,7 @@ myList.append(4)
 myList.append(5)
 
 
-myList.reverse_between(2,4)
+myList.reverse_between(2,5)
 # myList.print_list()
 
 
