@@ -238,13 +238,45 @@ class LinkedList:
                 prev2.next = current
                 prev2 = prev2.next
             current = current.next
-        
+
         prev2.next = None
         prev1.next = d2.next
         self.head = d1.next
-        
+
         return True
 
+    def reverse_between(self, start_index, end_index):
+        # use length -1 to get the index
+        # create a dummy node (d)
+        # prepend all nodes to the dummy node until length greater than end_index
+        # index 1 and 2 need to be marked with pointers - i1 and i2
+        # d needs 2 pointers. d1 and d2 
+        
+        # when the length > end_index i1 needs to point to d1.next and i1.next = none
+        # the index needs to be length - 1
+        # i1 is start_index - 1, i2 is end_index - 1
+        
+        # 12345. - length
+        # 01234  - index
+        # -1012  - target
+        # print(self.length)
+
+
+        index = self.length - 1
+        target = 0
+        current = self.head
+        p1 = self.head
+
+        target_index_1 = start_index -1
+
+        for i in range(1, index):
+            if target_index_1 == i - 1:
+                p1 = current
+                
+
+
+
+            current = current.next
 
     def print_list(self):
         temp = self.head
@@ -252,16 +284,16 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
-myList = LinkedList(3)
-myList.append(8)
-myList.append(5)
-myList.append(10)
-myList.append(2)
+myList = LinkedList(0)
 myList.append(1)
+myList.append(2)
+myList.append(3)
+myList.append(4)
+myList.append(5)
 
 
-myList.partition_list(5)
-myList.print_list()
+myList.reverse_between(2,4)
+# myList.print_list()
 
 
 
