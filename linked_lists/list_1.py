@@ -246,50 +246,44 @@ class LinkedList:
         return True
 
     def reverse_between(self, start_index, end_index):
-        # use length -1 to get the index
-        # create a dummy node (d)
-        # prepend all nodes to the dummy node until length greater than end_index
-        # index 1 and 2 need to be marked with pointers - i1 and i2
-        # d needs 2 pointers. d1 and d2 
-        
-        # when the length > end_index i1 needs to point to d1.next and i1.next = none
-        # the index needs to be length - 1
-        # i1 is start_index - 1, i2 is end_index - 1
-        
-        # 12345. - length
-        # 01234  - index
-        # -1012  - target
-        # print(self.length)
-
         dummy = NewNode(0)
-        d1 = dummy
-        index = self.length - 1
-        target = 0
-        current = self.head.next
-        
-        loop_no = 0
+        dh = dummy
+        current_dummy = dummy
+        current = self.head
+
         p1 = current
         p2 = current
 
         target_index_1 = start_index -1
-        target_index_2 = end_index -1
-        
-        for i in range(1, index):
-            print(current.value)
-            print(i)
-            
-            if target_index_1 == i - 1:
+        target_index_2 = end_index + 1
+
+
+        for i in range(self.length):
+            # print(i)
+            if target_index_1 == i:
                 p1 = current
-                d1.next = current.next
-                d1 = d1.next
+                current.next.value = "YES"
+                dh.next = current.next
+                current_dummy = dh.next
+                
+            if target_index_2 == i:
+                p2 = current
 
-
-            if i >= start_index and i <= end_index:
-                print("index", i)
-                print("current val", current.value)
+            if i > start_index and i <= end_index:
+                current.value = "YES"
+                current_dummy.next = current
+                current_dummy = current_dummy.next
 
             current = current.next
- 
+
+        p1.next = dh.next
+        current_dummy.next = p2
+
+
+
+        return True
+
+
     def print_list(self):
         temp = self.head
         while temp is not None:
@@ -298,18 +292,31 @@ class LinkedList:
 
 myList = LinkedList(0)
 myList.append(1)
-myList.append(2)
-myList.append(3)
-myList.append(4)
-myList.append(5)
+myList.append('a')
+myList.append('b')
+myList.append('c')
 
-
-myList.reverse_between(2,5)
-# myList.print_list()
+myList.append(6)
 
 
 
 
+myList.reverse_between(2,4)
+myList.print_list()
 
+
+
+
+            #     print(d1.value)
+
+        # target_index_2 = end_index -1
+
+            #     current_dummy = current_dummy.next
+            #     dt = current_dummy
+            #     print("current_dummy", current_dummy.value)
+              
+            # current = current.next
+            # current_dummy.next = None
+            # current_dummy.next = p2
 
 
