@@ -247,7 +247,9 @@ class LinkedList:
 
     def reverse_between(self, start_index, end_index):
         dummy = NewNode(0)
+        # dummy_length = 1
         dh = dummy
+        dt = dummy
         current_dummy = dummy
         current = self.head
 
@@ -257,29 +259,41 @@ class LinkedList:
         target_index_1 = start_index -1
         target_index_2 = end_index + 1
 
-
         for i in range(self.length):
-            # print(i)
             if target_index_1 == i:
+
                 p1 = current
-                current.next.value = "YES"
                 dh.next = current.next
                 current_dummy = dh.next
                 
-            if target_index_2 == i:
-                p2 = current
-
-            if i > start_index and i <= end_index:
-                current.value = "YES"
-                current_dummy.next = current
-                current_dummy = current_dummy.next
-
             current = current.next
+                
+            # if target_index_2 == i:
+            #     p2 = current
 
-        p1.next = dh.next
-        current_dummy.next = p2
-
-
+            # if i >= start_index and i <= end_index:
+            #     current_dummy.next = current
+            #     current_dummy = current_dummy.next
+            #     dt = current_dummy
+            #     dummy_length +=1
+            #     print(current_dummy.value)
+                
+                
+        # temp = dh
+        # dh = dt
+        # dt = temp
+        # before = None
+        # after = temp.next
+        # for _ in range(dummy_length):
+        #     after = temp.next
+        #     temp.next = before
+        #     before = temp
+        #     temp = after
+        # p1.next = dh.next
+        # dt.next = p2
+        
+        
+        
 
         return True
 
