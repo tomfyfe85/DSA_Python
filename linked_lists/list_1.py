@@ -247,9 +247,7 @@ class LinkedList:
 
     def reverse_between(self, start_index, end_index):
         dummy = NewNode(0)
-        # dummy_length = 1
         dh = dummy
-        dt = dummy
         current_dummy = dummy
         current = self.head
 
@@ -263,38 +261,29 @@ class LinkedList:
             if target_index_1 == i:
 
                 p1 = current
-                dh.next = current.next
-                current_dummy = dh.next
+                current_dummy = current.next
+                dh.next = current_dummy
+                current_dummy.next = current.next
                 
+                
+            if target_index_2 == i:
+                p2 = current
+
+            if current.value > start_index and current.value <= end_index:
+                # print(end_index)
+    
+                print(current_dummy.value)
+                
+                # print(current_dummy.value)
+                # print(current_dummy.value)
             current = current.next
-                
-            # if target_index_2 == i:
-            #     p2 = current
-
-            # if i >= start_index and i <= end_index:
-            #     current_dummy.next = current
-            #     current_dummy = current_dummy.next
-            #     dt = current_dummy
-            #     dummy_length +=1
-            #     print(current_dummy.value)
-                
-                
-        # temp = dh
-        # dh = dt
-        # dt = temp
-        # before = None
-        # after = temp.next
-        # for _ in range(dummy_length):
-        #     after = temp.next
-        #     temp.next = before
-        #     before = temp
-        #     temp = after
-        # p1.next = dh.next
-        # dt.next = p2
         
-        
-        
-
+        # while dh:
+        #     # print(dh.value)
+        #     dh = dh.next
+        p1.next = dh
+        # dh.next = None
+        current_dummy.next = p2
         return True
 
 
@@ -306,11 +295,13 @@ class LinkedList:
 
 myList = LinkedList(0)
 myList.append(1)
-myList.append('a')
-myList.append('b')
-myList.append('c')
-
+myList.append(2)
+myList.append(3)
+myList.append(4)
 myList.append(6)
+
+myList.append(7)
+myList.append(8)
 
 
 
