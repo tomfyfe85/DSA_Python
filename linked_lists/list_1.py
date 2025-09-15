@@ -254,8 +254,8 @@ class LinkedList:
         p1 = current
         p2 = current
 
-        target_index_1 = start_index -1
-        target_index_2 = end_index + 1
+        target_index_1 = start_index 
+        target_index_2 = end_index 
 
         for i in range(self.length):
             if target_index_1 == i:
@@ -270,12 +270,8 @@ class LinkedList:
                 p2 = current
 
             if current.value > start_index and current.value <= end_index:
-                # print(end_index)
     
                 print(current_dummy.value)
-                
-                # print(current_dummy.value)
-                # print(current_dummy.value)
             current = current.next
         
         # while dh:
