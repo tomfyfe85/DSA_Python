@@ -246,40 +246,9 @@ class LinkedList:
         return True
 
     def reverse_between(self, start_index, end_index):
-        dummy = NewNode(0)
-        dh = dummy
-        current_dummy = dummy
-        current = self.head
-
-        p1 = current
-        p2 = current
-
-        target_index_1 = start_index 
-        target_index_2 = end_index 
-
-        for i in range(self.length):
-            if target_index_1 == i:
-
-                p1 = current
-                current_dummy = current.next
-                dh.next = current_dummy
-                current_dummy.next = current.next
-                
-                
-            if target_index_2 == i:
-                p2 = current
-
-            if current.value > start_index and current.value <= end_index:
-    
-                print(current_dummy.value)
-            current = current.next
-        
-        # while dh:
-        #     # print(dh.value)
-        #     dh = dh.next
-        p1.next = dh
-        # dh.next = None
-        current_dummy.next = p2
+       
+       
+       
         return True
 
 
