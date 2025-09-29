@@ -1,19 +1,19 @@
 """
-If two pointers are point to the same node, if the value is changed on one pointer, 
-it will be reflected on the other.
-Think about linked lists like a set of linked dictionaries
+# If two pointers are point to the same node, if the value is changed on one pointer, 
+# it will be reflected on the other.
+# Think about linked lists like a set of linked dictionaries
 
-CODE for the situation where the data structures are empty first
-When adding/removing a node always remember to + or - from length
+# CODE for the situation where the data structures are empty first
+# When adding/removing a node always remember to + or - from length
 """
 
 # APPEND
 # Add the new node to the end of the list
-# Add new node, 
+# Add new node,
 # tail points to new node
 # self.tail = new node
 
-# POP 
+# POP
 # REMOVES LAST ITME FROM THE LIST
 # 2 Edge cases:
 # 1 - The list is empty
@@ -106,14 +106,11 @@ class LinkedList:
         return False
 
     def insert(self, index, value):
-
         if index < 0 or index > self.length:
             return None
-
         if index == 0:
             self.prepend(value)
             return True
-
         if index == self.length:
             self.append(value)
             return True
@@ -126,8 +123,34 @@ class LinkedList:
 
         return True
 
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        pre = self.get(index - 1)
+        temp = pre.next
+        pre.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
 
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
 
+        self.tail = temp
+        after = temp.next
+
+        before = None
+
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
 
 
     def print_list(self):
@@ -136,6 +159,7 @@ class LinkedList:
         while temp is not None:
             print(temp.value)
             temp = temp.next
+
 
 
 my_linked_list = LinkedList(0)

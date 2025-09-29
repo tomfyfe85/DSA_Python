@@ -7,9 +7,33 @@
     "tab.inactiveModifiedBorder": "#8b6fb0",
     "breadcrumb.foreground": "#b392f0",
     "breadcrumb.focusForeground": "#d8b9ff",
-    "editorGroupHeader.tabsBackground": "#1a1a2e"
+    "editorGroupHeader.tabsBackground": "#1a1a2e",
+    "editor.foreground": "#b8bfc7"
   },
   "workbench.colorDecorations": {
     "colors": false
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "meta.function-call.generic.python",
+          "meta.function-call.python"
+        ],
+        "settings": {
+          "foreground": "#FFCB8B"
+        }
+      },
+      {
+        "scope": [
+          "string.quoted.docstring.multi.python",
+          "string.quoted.single.python",
+          "string.quoted.double.python"
+        ],
+        "settings": {
+          "foreground": "#6FDD00"
+        }
+      }
+    ]
   }
 }
