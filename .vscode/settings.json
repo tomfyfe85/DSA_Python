@@ -1,0 +1,15 @@
+{
+  "workbench.colorCustomizations": {
+    "tab.activeForeground": "#b392f0",
+    "tab.inactiveForeground": "#8b6fb0",
+    "tab.hoverForeground": "#d8b9ff",
+    "tab.activeModifiedBorder": "#b392f0",
+    "tab.inactiveModifiedBorder": "#8b6fb0",
+    "breadcrumb.foreground": "#b392f0",
+    "breadcrumb.focusForeground": "#d8b9ff",
+    "editorGroupHeader.tabsBackground": "#1a1a2e"
+  },
+  "workbench.colorDecorations": {
+    "colors": false
+  }
+}
