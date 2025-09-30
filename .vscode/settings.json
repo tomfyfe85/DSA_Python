@@ -1,39 +1,43 @@
 {
   "workbench.colorCustomizations": {
-    "tab.activeForeground": "#b392f0",
-    "tab.inactiveForeground": "#8b6fb0",
-    "tab.hoverForeground": "#d8b9ff",
-    "tab.activeModifiedBorder": "#b392f0",
-    "tab.inactiveModifiedBorder": "#8b6fb0",
-    "breadcrumb.foreground": "#b392f0",
-    "breadcrumb.focusForeground": "#d8b9ff",
-    "editorGroupHeader.tabsBackground": "#1a1a2e",
-    "editor.foreground": "#b8bfc7"
+    "[Night Owl]": {
+      "tab.activeForeground": "#b392f0",
+      "tab.inactiveForeground": "#8b6fb0",
+      "tab.hoverForeground": "#d8b9ff",
+      "tab.activeModifiedBorder": "#b392f0",
+      "tab.inactiveModifiedBorder": "#8b6fb0",
+      "breadcrumb.foreground": "#b392f0",
+      "breadcrumb.focusForeground": "#d8b9ff",
+      "editorGroupHeader.tabsBackground": "#1a1a2e",
+      "editor.foreground": "#b8bfc7"
+    }
   },
   "workbench.colorDecorations": {
     "colors": false
   },
   "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "meta.function-call.generic.python",
-          "meta.function-call.python"
-        ],
-        "settings": {
-          "foreground": "#FFCB8B"
+    "[Night Owl]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "meta.function-call.generic.python",
+            "meta.function-call.python"
+          ],
+          "settings": {
+            "foreground": "#FFCB8B"
+          }
+        },
+        {
+          "scope": [
+            "string.quoted.docstring.multi.python",
+            "string.quoted.single.python",
+            "string.quoted.double.python"
+          ],
+          "settings": {
+            "foreground": "#6FDD00"
+          }
         }
-      },
-      {
-        "scope": [
-          "string.quoted.docstring.multi.python",
-          "string.quoted.single.python",
-          "string.quoted.double.python"
-        ],
-        "settings": {
-          "foreground": "#6FDD00"
-        }
-      }
-    ]
+      ]
+    }
   }
 }

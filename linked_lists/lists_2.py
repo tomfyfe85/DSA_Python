@@ -152,6 +152,26 @@ class LinkedList:
             before = temp
             temp = after
 
+# LEET CODE
+    def find_middle_node(self):
+        fast = self.head
+        slow = self.head
+
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+
+    def has_loop(self):
+        fast = self.head
+        slow = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
 
     def print_list(self):
 
@@ -161,12 +181,26 @@ class LinkedList:
             temp = temp.next
 
 
+def find_kth_from_end(ll, k):
+    slow = ll.head
+    fast = ll.head
 
-my_linked_list = LinkedList(0)
-my_linked_list.append(1)
+    for _ in range(k):
+        if fast is None:
+            return None
+
+    while fast.next:
+        slow = slow.next
+        fast = fast.next
+    return slow
+
+
+
+my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.append(3)
-my_linked_list.set_value(-1, "hi!")
+my_linked_list.append(4)
+my_linked_list.append(5)
+my_linked_list.append(6)
 
-
-my_linked_list.print_list()
+# my_linked_list.print_list()
